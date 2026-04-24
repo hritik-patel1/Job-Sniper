@@ -190,12 +190,8 @@ def run_monitor():
 
 # ---------------- SCHEDULER ---------------- #
 
-while True:
 
-    print("\n===== JOB CHECK STARTED =====")
 
-    run_monitor()
+print("\n===== JOB CHECK STARTED =====")
 
-    print("\nNext check in 1 hour...\n")
-
-    time.sleep(CHECK_INTERVAL)
+run_monitor()
