@@ -1,42 +1,42 @@
-name: Monitor Jobs
+# name: Monitor Jobs
 
-on:
-  push:
-    branches:
-      - main   # change if your branch is different
-  schedule:
-    - cron: "*/30 * * * *"
-  workflow_dispatch:
+# on:
+#   push:
+#     branches:
+#       - main   # change if your branch is different
+#   schedule:
+#     - cron: "*/30 * * * *"
+#   workflow_dispatch:
 
-jobs:
-  monitor:
-    runs-on: ubuntu-latest
+# jobs:
+#   monitor:
+#     runs-on: ubuntu-latest
 
-    permissions:
-      contents: write
+#     permissions:
+#       contents: write
 
-    steps:
-      - uses: actions/checkout@v4
+#     steps:
+#       - uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
+#       - name: Set up Python
+#         uses: actions/setup-python@v5
+#         with:
+#           python-version: '3.11'
 
-      - name: Install dependencies
-        run: pip install -r requirements.txt
+#       - name: Install dependencies
+#         run: pip install -r requirements.txt
 
-      - name: Run monitor
-        run: python monitor.py
+#       - name: Run monitor
+#         run: python monitor.py
 
-      - name: Commit and push changes
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add seen_jobs.json
-          if git diff --staged --quiet; then
-            echo "No changes to commit"
-          else
-            git commit -m "Update seen jobs"
-            git push
-          fi
+#       - name: Commit and push changes
+#         run: |
+#           git config --global user.name 'github-actions[bot]'
+#           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+#           git add seen_jobs.json
+#           if git diff --staged --quiet; then
+#             echo "No changes to commit"
+#           else
+#             git commit -m "Update seen jobs"
+#             git push
+#           fi
