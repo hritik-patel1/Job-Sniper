@@ -1,7 +1,7 @@
 import argparse
 import importlib
 from selenium import webdriver
-from webdriver_manager.chromium import ChromiumDriverManager
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 
@@ -30,7 +30,7 @@ def main():
     options.add_argument("--disable-dev-shm-usage")
 
     service = Service(ChromeDriverManager().install())
-    driver = webdriver.Chromium(service=service, options=options)
+    driver = webdriver.Chrome(service=service, options=options)
 
     try:
         print(f"Testing scraper for {company} with URL: {url}")

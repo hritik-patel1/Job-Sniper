@@ -1,5 +1,5 @@
 KEYWORDS = ["software", "developer", "engineer", "sde", "backend", "fullstack", "frontend"]
-LOCATIONS = ["india", "ind", "bengaluru", "hyderabad", "bangalore", "pune", "chennai"]
+LOCATIONS = ["india", "ind", "bengaluru", "hyderabad", "bangalore", "pune", "chennai", "mumbai"]
 
 
 COMPANY_RULES = {
@@ -38,6 +38,16 @@ COMPANY_RULES = {
     "visa": {
         "exclude_titles": ["staff", "manager", "consultant", "lead"],   
         "limit": 20 
+    },
+
+    "wells_fargo": {
+        "exclude_titles": ["manager", "lead", "director"],
+        "limit": 20
+    },
+
+    "morgan_stanley": {
+        "exclude_titles": ["director", "manager", "lead", "vice president"],
+        "limit": 20
     }
 
 }
@@ -51,8 +61,7 @@ def company_filter(company, title, location):
     location = location.lower().strip()
 
     keyword_match = any(k in title for k in KEYWORDS)
-    country_code = location.split(",")[0].strip()
-    location_match = country_code in LOCATIONS
+    location_match = any(loc in location for loc in LOCATIONS)
 
     # include rule
     if "include_titles" in rules:

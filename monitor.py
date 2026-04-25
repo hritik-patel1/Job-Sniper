@@ -15,6 +15,8 @@ from scraper.goldmansachs_scraper import goldmansachs_scraper_jobs
 from scraper.paypal_scraper import paypal_scraper_jobs
 from filters import company_filter
 from selenium.webdriver.chrome.options import Options
+from scraper.wells_fargo_scraper import wells_fargo_scraper_jobs
+from scraper.morgan_stanley_scraper import morgan_stanley_scraper_jobs
 
 
 # from scraper.qualcomm_scraper import qualcomm_scraper_jobs
@@ -32,7 +34,9 @@ SCRAPERS = {
     "oracle": oracle_scraper_jobs,  
     "salesforce": salesforce_scraper_jobs,
     "goldmansachs": goldmansachs_scraper_jobs,
-    "paypal": paypal_scraper_jobs
+    "paypal": paypal_scraper_jobs,
+    "wells_fargo": wells_fargo_scraper_jobs,
+    "morgan_stanley": morgan_stanley_scraper_jobs
 
     # "qualcomm": qualcomm_scraper_jobs,
     # "swiggy": swiggy_scraper_jobs,
@@ -56,21 +60,25 @@ URLS = [
 
     ("https://apply.careers.microsoft.com/careers?domain=microsoft.com&query=software&start=0&location=india&pid=1970393556627119&sort_by=timestamp&filter_include_remote=1", "microsoft"),
 
-    # ("https://www.amazon.jobs/en/search?offset=0&result_limit=10&sort=recent&distanceType=Mi&radius=24km&latitude=28.63141&longitude=77.21676&loc_group_id=&loc_query=India&base_query=software&city=&country=IND&region=&county=&query_options=&", "amazon"),
+    ("https://www.amazon.jobs/en/search?offset=0&result_limit=10&sort=recent&distanceType=Mi&radius=24km&latitude=28.63141&longitude=77.21676&loc_group_id=&loc_query=India&base_query=software&city=&country=IND&region=&county=&query_options=&", "amazon"),
 
     # ("https://www.visa.co.uk/en_gb/jobs/?q=software&cities=Bangalore&cities=Mumbai&sortProperty=createdOn&sortOrder=DESC", "visa"),
 
-    # ("https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/jobs?keyword=software&location=India&locationId=300000000289360&locationLevel=country&mode=location&sortBy=POSTING_DATES_DESC", "jpmorgan"),
+    ("https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/jobs?keyword=software&location=India&locationId=300000000289360&locationLevel=country&mode=location&sortBy=POSTING_DATES_DESC", "jpmorgan"),
 
-    # ("https://careers.oracle.com/en/sites/jobsearch/jobs?keyword=software&location=India&locationId=300000000106947&mode=location&sortBy=POSTING_DATES_DESC", "oracle"),
+    ("https://careers.oracle.com/en/sites/jobsearch/jobs?keyword=software&location=India&locationId=300000000106947&mode=location&sortBy=POSTING_DATES_DESC", "oracle"),
 
-    # ("https://careers.salesforce.com/en/jobs/?search=software&country=India&pagesize=20#results", "salesforce"),
+    ("https://careers.salesforce.com/en/jobs/?search=software&country=India&pagesize=20#results", "salesforce"),
 
-    # ("https://higher.gs.com/results?LOCATION=Bengaluru|Mumbai|Hyderabad&page=1&search=software&sort=POSTED_DATE", "goldmansachs"),
+    ("https://higher.gs.com/results?LOCATION=Bengaluru|Mumbai|Hyderabad&page=1&search=software&sort=POSTED_DATE", "goldmansachs"),
 
-    # ("https://paypal.eightfold.ai/careers?query=software&start=0&location=Chennai%2C++TN%2C++India&pid=274908370246&sort_by=timestamp&filter_distance=80&filter_include_remote=1", "paypal"),
+    ("https://paypal.eightfold.ai/careers?query=software&start=0&location=Chennai%2C++TN%2C++India&pid=274908370246&sort_by=timestamp&filter_distance=80&filter_include_remote=1", "paypal"),
 
-    # ("https://paypal.eightfold.ai/careers?query=software&start=0&location=Bengaluru%2C++KA%2C++India&pid=274918242550&sort_by=timestamp&filter_distance=80&filter_include_remote=1", "paypal")
+    ("https://paypal.eightfold.ai/careers?query=software&start=0&location=Bengaluru%2C++KA%2C++India&pid=274918242550&sort_by=timestamp&filter_distance=80&filter_include_remote=1", "paypal"),
+
+    ("https://morganstanley.eightfold.ai/careers?source=LinkedIn&query=software&start=0&location=india&pid=549797214434&sort_by=timestamp&filter_include_remote=1", "morgan_stanley"),
+
+    # ("https://www.wellsfargojobs.com/en/jobs/?search=software&country=India", "wells_fargo")
 
     
     
